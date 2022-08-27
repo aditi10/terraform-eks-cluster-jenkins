@@ -29,6 +29,7 @@ Prerequisites
 Verify the Cluster
 
 `kubectl cluster-info`
+
 `kubectl get nodes`
 
 To setup Kubernetes cluster refer link: https://learn.hashicorp.com/tutorials/terraform/eks
@@ -38,6 +39,7 @@ To setup Kubernetes cluster refer link: https://learn.hashicorp.com/tutorials/te
 - Creates Jenkins master server using helm with the configurations
 - Creates a jenkins namespace
 `kubectl create namespace jenkins`
+
 `kubectl get ns`
 
 - Create Jenkins service account
