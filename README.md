@@ -15,18 +15,21 @@ Prerequisites
 5. region update van be provided in variables.tf
 
 
-git clone terraform-eks-cluster-jenkins
-cd terraform-eks-cluster-jenkins
-terraform init
-terraform apply
+`git clone terraform-eks-cluster-jenkins`
 
-aws eks --region $(terraform output -raw region) update-kubeconfig \
-    --name $(terraform output -raw cluster_name)
+`cd terraform-eks-cluster-jenkins`
+
+`terraform init`
+
+`terraform apply`
+
+`aws eks --region $(terraform output -raw region) update-kubeconfig 
+    --name $(terraform output -raw cluster_name)`
 
 Verify the Cluster
 
-kubectl cluster-info
-kubectl get nodes
+`kubectl cluster-info`
+`kubectl get nodes`
 
 To setup Kubernetes cluster refer link: https://learn.hashicorp.com/tutorials/terraform/eks
 
@@ -34,19 +37,22 @@ To setup Kubernetes cluster refer link: https://learn.hashicorp.com/tutorials/te
 - Create a loadbaalncer which helps accessing the jenkins
 - Creates Jenkins master server using helm with the configurations
 - Creates a jenkins namespace
-kubectl create namespace jenkins
-kubectl get ns
+`kubectl create namespace jenkins`
+`kubectl get ns`
 
 - Create Jenkins service account
 cd jenkins
-kubectl create -f jenkins-sa.yaml
+`kubectl create -f jenkins-sa.yaml`
 
 - create a persistent volume
-kubectl create -f jenkins-volume.yaml
+`kubectl create -f jenkins-volume.yaml`
 
 - Updated values in "helm-charts/charts/jenkins/values.yaml"
-cd helm-charts/charts/jenkins/
-helm install jenkins -n jenkins -f values.yaml jenkinsci/jenkins
+
+
+`cd helm-charts/charts/jenkins/`
+
+`helm install jenkins -n jenkins -f values.yaml jenkinsci/jenkins`
 
 
 Refered link : https://www.bogotobogo.com/DevOps/Docker/Docker-Kubernetes-Jenkins-Helm.php and https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins
@@ -62,7 +68,7 @@ Refered link : https://www.bogotobogo.com/DevOps/Docker/Docker-Kubernetes-Jenkin
 
 Install Nodejs plugin in jenkins and setup pipeline in Jenkins using "Jenkinsfile"
 - Once the jenkins server is up, we need to install NodeJS plugin in it
-- Craete a pipeline Job and add the Jenkinsfile
+- Create a pipeline Job and add the Jenkinsfile
 - Install aws cli plugin on Jenkins, and user has permission to run it
 
 The Jenkinsfile
