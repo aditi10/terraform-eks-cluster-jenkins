@@ -1,11 +1,11 @@
 # Terraform - Provision an EKS Cluster and setup Jenkins
 
 Prerequisites
-1. an AWS account
-2. the AWS CLI, installed and configured
-3. AWS IAM Authenticator
-4. the Kubernetes CLI, also known as kubectl should be installed on system
-4. Helm cli should be installed on system
+1. Require an AWS account
+2. The AWS CLI, installed and configured
+3. AWS IAM Authenticator should be present
+4. The Kubernetes CLI, also known as kubectl should be installed on system
+5. Helm cli should be installed on system
 
 # Setup EKS cluster using terraform code:
 1. creates VPC, subnets, Internetgateway and Nat gateway
